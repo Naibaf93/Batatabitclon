@@ -157,11 +157,37 @@ main {
     min-width: 230px;
     max-width: 300px;
     text-align: left;
+    position: sticky;
+    right:calc(57% - 118px)
 }
 
 .table-container {
     display: flex;
     flex-direction: column;
+}
+
+.table-container--slider{
+    display: flex;
+    gap: 65px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+.box1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.table-container h2 {
+    font-size: 1.8rem;
+	font-weight: 700;
+	line-height: 2.3rem;
+	color: var(--secondary-blue);
+	margin-left: 12px;
+	margin-bottom: 12px;
 }
 
 .table-container h3 {
@@ -175,7 +201,7 @@ main {
 
 .grid-table-container {
     display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(2, 1fr);
 	border-radius: 8px;
 	font-family: 'Inter', sans-serif;
 	grid-gap: 1.5px;
@@ -245,7 +271,7 @@ main {
 	color: #F5450D;
 }
 
-.table-update {
+.grid-table-container .table-update {
     background-color: var(--soft-orange);
 	padding: 8px;
 	text-align: center;
@@ -257,6 +283,25 @@ main {
     height: 51px;   
 }
 
+.grid-table-container .table-update--comision {
+    background-color: #E7F5FF;
+	padding: 8px;
+	text-align: center;
+	margin-top: 15px;
+	border-radius: 8px;
+	width: 90%;
+	align-self: center;
+    width: 173px;
+    height: 51px;
+}
+
+.table-update--comision p {
+    font-size: 1.3rem;
+	font-weight: 300;
+	line-height: 1.5rem;
+    color: var(--warm-black);
+}
+
 .table-update p {
     font-size: 1.3rem;
 	font-weight: 300;
@@ -265,6 +310,12 @@ main {
 }
 
 .table-update span {
+    font-size: 1.2em;
+	font-weight: 700;
+	line-height: 1.45em;
+}
+
+.table-update--comision span {
     font-size: 1.2em;
 	font-weight: 700;
 	line-height: 1.45em;
